@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="deepakTest" parallel="false">
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter2" />
+        <listener class-name="com.reports.ExtendReportListener" />
+    </listeners>
+    <test name="PositiveFlow">
+        <classes>
+            <class name="com.procurement.positiveFlowTest.PositiveTestFlow" />
+        </classes>
+    </test>
+</suite>
