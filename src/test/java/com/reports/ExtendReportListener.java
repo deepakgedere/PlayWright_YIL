@@ -1,4 +1,5 @@
 package com.reports;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,10 +27,10 @@ public class ExtendReportListener implements ITestListener {
     public ExtentReports extentReports;
 
 //TODO Constructor
-    public ExtendReportListener(){
+    public ExtendReportListener() throws FileNotFoundException {
     }
 
-    public ExtentReports init() {
+    public ExtentReports init() throws FileNotFoundException {
         Path path = Paths.get(OUTPUT_FOLDER);
         // if directory exists?
         if (!Files.exists(path)) {

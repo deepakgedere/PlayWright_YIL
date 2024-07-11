@@ -93,7 +93,7 @@
 <!--                <version>${maven-surefire-plugin}</version>-->
 <!--                <configuration>-->
 <!--                    <suiteXmlFiles>-->
-<!--                        <suiteXmlFile>src/test/resources/testrunners/deepaktest.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>src/test/resources/testrunners/positiveFlowTest.xml</suiteXmlFile>-->
 <!--                    </suiteXmlFiles>-->
 <!--                </configuration>-->
 <!--            </plugin>-->

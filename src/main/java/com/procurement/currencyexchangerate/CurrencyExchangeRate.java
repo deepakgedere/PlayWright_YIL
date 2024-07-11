@@ -13,6 +13,7 @@ public class CurrencyExchangeRate {
     LoginPageInterface loginPageInterface;
     LogoutPageInterface logoutPageInterface;
     Page page;
+    String browser;
 
 //TODO Constructor
     private CurrencyExchangeRate() {

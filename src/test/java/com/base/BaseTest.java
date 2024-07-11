@@ -103,6 +103,7 @@ import com.reports.ExtendReportListener;
 import org.testng.ITestListener;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import java.util.Properties;
 
@@ -209,14 +210,17 @@ public class BaseTest {
     protected POInvoiceApprovalInterface poInvoiceApprovalInterface;
     protected ITestListener iTestListener;
 
-
+    @Parameters({"browser"})
     @BeforeTest
-    public void Setup() {
+    public void Setup(String browserName) {
         try {
             playWrightFactory = new PlayWrightFactory();
-            properties = playWrightFactory.initializeProperties();
-            page = playWrightFactory.initializeBrowser(properties);
 
+            if(browserName != null){
+                properties = playWrightFactory.initializeProperties(browserName);
+                properties.setProperty("browser", browserName);
+            }
+            page = playWrightFactory.initializeBrowser(properties);
             loginPageInterface = new LoginPage(properties, page);
             logoutPageInterface = new LogoutPage(page);
 

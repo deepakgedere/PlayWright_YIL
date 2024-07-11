@@ -46,6 +46,8 @@ import com.procurement.requisition.suspend.PocPrBuyerManagerSuspend;
 import com.procurement.requisition.suspend.PocPrBuyerSuspend;
 import com.procurement.workorder.create.WorkOrderCreate;
 import com.procurement.workorder.trackerstatus.WOTrackerStatus;
+
+import java.io.FileNotFoundException;
 import java.util.Properties;
 
 public class BaseMain {
@@ -100,8 +102,13 @@ public class BaseMain {
 
 //TODO Constructor
     public BaseMain() throws InterruptedException {
+
+        try {
             playWrightFactory = new PlayWrightFactory();
-            properties = playWrightFactory.initializeProperties();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        properties = playWrightFactory.initializeProperties(properties.getProperty("browser"));
             page = playWrightFactory.initializeBrowser(properties);
 
             loginPageInterface = new LoginPage(properties, page);

@@ -1,6 +1,7 @@
 package com.factory;
 import com.microsoft.playwright.*;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -15,7 +16,7 @@ public class PlayWrightFactory {
     Properties properties;
 
 //TODO Constructor
-    public PlayWrightFactory() {
+    public PlayWrightFactory() throws FileNotFoundException {
     }
 
 //TODO Thread Local
@@ -46,9 +47,22 @@ public class PlayWrightFactory {
         return localPage.get();
     }
 
-    public Properties initializeProperties() {
+//    FileOutputStream x = new FileOutputStream("./src/test/resources/config/Properties");
+//    FileOutputStream y = new FileOutputStream("./src/test/resources/config/Properties2");
+    public Properties initializeProperties(String browserName) {
         try {
-            fileInputStream = new FileInputStream("./src/test/resources/config/Properties");
+            switch (browserName.toLowerCase()) {
+                case "chrome":
+                    fileInputStream = new FileInputStream("./src/test/resources/config/Properties");
+                    break;
+                case "edge":
+                    fileInputStream = new FileInputStream("./src/test/resources/config/Properties2");
+                    break;
+                default:
+                    System.out.println("--Enter Proper Browser Name--");
+                    break;
+            }
+
             properties = new Properties();
             properties.load(fileInputStream);
         } catch (IOException error) {
@@ -72,6 +86,9 @@ public class PlayWrightFactory {
             case "firefox":
                 localBrowser.set(getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false)));
                 break;
+            case "edge":
+                localBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false)));
+                break;
             default:
                 System.out.println("--Enter Proper Browser Name--");
                 break;
@@ -81,10 +98,20 @@ public class PlayWrightFactory {
         getPage().navigate(properties.getProperty("url").trim());
         return getPage();
     }
-
     public void savePropertiesToFile(String poReferenceId) {
         try {
-            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+            String browserName = properties.getProperty("browser");
+            switch(browserName.toLowerCase()) {
+                case "chrome":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+                    break;
+                case "edge":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                default:
+                    System.out.println("--Enter Proper Browser Name--");
+                    break;
+            }
+//            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
             properties.setProperty("PoReferenceId", poReferenceId);
             properties.store(fileOutputStream, "PoReferenceId");
         } catch (IOException error) {
@@ -93,7 +120,18 @@ public class PlayWrightFactory {
     }
     public void savePrRefNo(String prRefId) {
         try {
-            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+            String browserName = properties.getProperty("browser");
+            switch(browserName.toLowerCase()) {
+                case "chrome":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+                    break;
+                case "edge":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                default:
+                    System.out.println("--Enter Proper Browser Name--");
+                    break;
+            }
+//            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
             properties.setProperty("PrRefId", prRefId);
             properties.store(fileOutputStream, "PrRefId");
         } catch (IOException error) {
@@ -102,7 +140,18 @@ public class PlayWrightFactory {
     }
     public void savePORRefNo(String porRefId) {
         try {
-            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+            String browserName = properties.getProperty("browser");
+            switch(browserName.toLowerCase()) {
+                case "chrome":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+                    break;
+                case "edge":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                default:
+                    System.out.println("--Enter Proper Browser Name--");
+                    break;
+            }
+//            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
             properties.setProperty("PORRefId", porRefId);
             properties.store(fileOutputStream, "PORRefId");
         } catch (IOException error) {
@@ -111,7 +160,18 @@ public class PlayWrightFactory {
     }
     public void saveApproversToFile(String approverEmail, int i) {
         try {
-            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+            String browserName = properties.getProperty("browser");
+            switch(browserName.toLowerCase()) {
+                case "chrome":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+                    break;
+                case "edge":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                default:
+                    System.out.println("--Enter Proper Browser Name--");
+                    break;
+            }
+//            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
             properties.setProperty("Approver"+i, approverEmail);
             properties.store(fileOutputStream, "Approver"+i);
         } catch (IOException error) {
@@ -120,7 +180,18 @@ public class PlayWrightFactory {
     }
     public void saveApproversCount(int i) {
         try {
-            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+            String browserName = properties.getProperty("browser");
+            switch(browserName.toLowerCase()) {
+                case "chrome":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
+                    break;
+                case "edge":
+                    fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                default:
+                    System.out.println("--Enter Proper Browser Name--");
+                    break;
+            }
+//            fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties");
             properties.setProperty("ApproversCount", String.valueOf(i));
             properties.store(fileOutputStream, "ApproversCount");
         } catch (IOException error) {
