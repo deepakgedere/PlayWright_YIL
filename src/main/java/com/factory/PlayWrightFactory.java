@@ -199,6 +199,11 @@ public class PlayWrightFactory {
         }
     }
 
+    public void getProperties(String x){
+
+    }
+
+
     public void savePropertiesToFile2(String getCurrencyCode) {
         try {
 
