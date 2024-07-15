@@ -107,6 +107,7 @@ public class PlayWrightFactory {
                     break;
                 case "edge":
                     fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                    break;
                 default:
                     System.out.println("--Enter Proper Browser Name--");
                     break;
@@ -127,6 +128,7 @@ public class PlayWrightFactory {
                     break;
                 case "edge":
                     fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                    break;
                 default:
                     System.out.println("--Enter Proper Browser Name--");
                     break;
@@ -147,6 +149,7 @@ public class PlayWrightFactory {
                     break;
                 case "edge":
                     fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                    break;
                 default:
                     System.out.println("--Enter Proper Browser Name--");
                     break;
@@ -167,6 +170,7 @@ public class PlayWrightFactory {
                     break;
                 case "edge":
                     fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                    break;
                 default:
                     System.out.println("--Enter Proper Browser Name--");
                     break;
@@ -187,6 +191,7 @@ public class PlayWrightFactory {
                     break;
                 case "edge":
                     fileOutputStream = new FileOutputStream("./src/test/resources/config/Properties2");
+                    break;
                 default:
                     System.out.println("--Enter Proper Browser Name--");
                     break;

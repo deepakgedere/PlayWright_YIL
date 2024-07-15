@@ -36,16 +36,18 @@ public class InspectionCreate implements InspectionCreateInterface {
                     loginPageInterface.LoginMethod(properties.getProperty("VendorMailId"));
                 }
         );
-        page.locator("//*[contains(text(), 'Order Schedules')]").click();
-        String poReferenceId = properties.getProperty("PoReferenceId");
-        Thread.sleep(1000);
-//        List<String> containerList = page.locator("#listContainer tr td").allTextContents();
-//        for(String tr : containerList){
-//            if(tr.contains(poReferenceId)){
-//                page.locator(".btn-link").first().click();s
-//            }
-//        }
 
+        String poReferenceId = properties.getProperty("PoReferenceId");
+
+        Response x = page.waitForResponse(
+                resp -> resp.url().equals("https://dprocure-uat.cormsquare.com/api/VP/OrderSchedules/Listing") && resp.status() == 200,
+                () -> {
+                    page.locator("//*[contains(text(), 'Order Schedules')]").click();
+                }
+        );
+       // https://dprocure-uat.cormsquare.com/api/VP/ActivityLogs
+
+// Click the login button, which triggers the request
         Locator rows = page.locator("//tr");
 
         // Iterate through each row
@@ -69,11 +71,25 @@ public class InspectionCreate implements InspectionCreateInterface {
                 }
             }
         }
-        page.waitForLoadState(LoadState.DOMCONTENTLOADED);
-        Thread.sleep(1000);
+
+//        https://dprocure-uat.cormsquare.com/api/VP/OrderSchedules/Listing
+
+//        List<String> containerList = page.locator("#listContainer tr td").allTextContents();
+//        for(String tr : containerList){
+//            if(tr.contains(poReferenceId)){
+//                page.locator(".btn-link").first().click();s
+//            }
+//        }
+
+//
+//        page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+//        Thread.sleep(1000);
         page.locator("#btnSendForInspection").click();
+        Thread.sleep(1000);
+
         page.locator(".bootbox-accept").click();
         Thread.sleep(1000);
+
         logoutPageInterface.LogoutMethod();
     }
 }
