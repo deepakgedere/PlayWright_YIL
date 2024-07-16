@@ -47,6 +47,7 @@ public class PocPrApprove implements PrApprove {
         String title = "Requisition "+PRReferenceNumber;
         page.locator(String.format("//*[contains(text(), '%s')]", title)).first().click();
         page.locator("#btnApprove").click();
+        Thread.sleep(1000);
         page.locator(".bootbox-accept").click();
         Thread.sleep(1000);
         logoutPageInterface.LogoutMethod();

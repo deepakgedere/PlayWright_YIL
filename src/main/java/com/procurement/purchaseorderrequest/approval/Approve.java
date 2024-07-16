@@ -53,8 +53,9 @@ public class Approve implements PorApprove {
         String poReferenceId = page.waitForSelector("#referenceId").textContent();
         playWrightFactory.savePropertiesToFile(poReferenceId);
         page.locator("#btnApprove").click();
-        page.locator(".bootbox-accept").click();
         Thread.sleep(1000);
+        page.locator(".bootbox-accept").click();
+        Thread.sleep(2000);
         logoutPageInterface.LogoutMethod();
     }
     public List<String> GetPORApprovers() throws InterruptedException {
