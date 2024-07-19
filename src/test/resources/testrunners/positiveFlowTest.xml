@@ -13,12 +13,12 @@
         </classes>
     </test>
 
-<!--    <test name="PositiveFlowChrome">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="com.procurement.positiveFlowTest.PositiveTestFlow" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="PositiveFlowChrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.procurement.positiveFlowTest.PositiveTestFlow" />
+        </classes>
+    </test>
 
 <!--    <test name="testx">-->
 <!--        <parameter name="browser" value="edge"/>-->
