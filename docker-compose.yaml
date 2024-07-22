@@ -25,7 +25,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_SESSIONS=3
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-      - SE_NODE_GRID_URL=https://localhost:4444/
+      - SE_NODE_GRID_URL=http://localhost:4444/
 
   chrome:
     image: selenium/node-chrome:beta
@@ -38,7 +38,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_SESSIONS=3
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-      - SE_NODE_GRID_URL=https://localhost:4444/
+      - SE_NODE_GRID_URL=http://localhost:4444/
 
   edge:
     image: selenium/node-edge:beta
@@ -51,7 +51,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_SESSIONS=3
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-      - SE_NODE_GRID_URL=https://localhost:4444/
+      - SE_NODE_GRID_URL=http://localhost:4444/
 
 
 networks:
