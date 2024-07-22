@@ -15,9 +15,7 @@ public class PlayWrightFactory {
     FileOutputStream fileOutputStream;
     Properties properties;
 
-//TODO Constructor
-    public PlayWrightFactory() throws FileNotFoundException {
-    }
+
 
 //TODO Thread Local
     private static final ThreadLocal<Browser> localBrowser = new ThreadLocal<>();
@@ -25,13 +23,17 @@ public class PlayWrightFactory {
     private static final ThreadLocal<Page> localPage = new ThreadLocal<>();
     private static final ThreadLocal<Playwright> localPlaywright = new ThreadLocal<>();
 
+    //TODO Constructor
+    public PlayWrightFactory() throws FileNotFoundException {
+        setPlaywright();
+    }
+
     public void setPlaywright() {
         playwright = Playwright.create();
         localPlaywright.set(playwright);
     }
 
     public Playwright getPlaywright() {
-        setPlaywright();
         return localPlaywright.get();
     }
 
@@ -59,10 +61,8 @@ public class PlayWrightFactory {
                     fileInputStream = new FileInputStream("./src/test/resources/config/Properties2");
                     break;
                 default:
-                    System.out.println("--Enter Proper Browser Name--");
-                    break;
+                    throw new IllegalArgumentException("Enter Proper Browser Name");
             }
-
             properties = new Properties();
             properties.load(fileInputStream);
         } catch (IOException error) {
