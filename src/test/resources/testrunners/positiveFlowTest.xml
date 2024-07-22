@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="positiveFlowTest" parallel="tests">
-    <listeners>
+<!--     <listeners>
         <listener class-name="org.testng.reporters.EmailableReporter2" />
         <listener class-name="com.reports.ExtendReportListener" />
-    </listeners>
+    </listeners> -->
 
     <test name="PositiveFlowEdge">
         <parameter name="browser" value="edge"/>
