@@ -215,7 +215,10 @@ public class BaseTest {
     public void Setup(String browserName) {
         try {
             playWrightFactory = new PlayWrightFactory();
-
+            if(browserName == null){
+                properties = playWrightFactory.initializeProperties("chrome");
+                properties.setProperty("browser", browserName);
+            }
             if(browserName != null){
                 properties = playWrightFactory.initializeProperties(browserName);
                 properties.setProperty("browser", browserName);
