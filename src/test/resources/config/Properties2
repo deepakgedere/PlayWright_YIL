@@ -1,13 +1,13 @@
-#ApproversCount
-#Thu Jul 18 16:44:52 IST 2024
+#PoReferenceId
+#Mon Sep 23 12:45:11 IST 2024
 //TODO=Non-Catalog (PR to Invoice)
 AdminId=manoj.yavagal@yokogawa.com
-Approver1=sajimon.bp@yokogawa.com
-Approver2=v.rangaswamy@yokogawa.com
+Approver1=c.senthilkumar@yokogawa.com
+Approver2=shashanka.s@yokogawa.com
 Approver3=Aditi.Agarwal@yokogawa.com
 Approver4=v.ravishankar@yokogawa.com
 Approver5=harshit.patel@yokogawa.com
-ApproversCount=3
+ApproversCount=2
 BillOfLading=Bill of Lading
 Buyer=Aditi.Agarwal@yokogawa.com
 BuyerGroup=BG2 - CONTROL ROOM / LVS / CABLES
@@ -29,7 +29,7 @@ Incoterm=EXW - Ex Works
 IncotermLocation=Bengaluru
 InternalLink=https\://www.google.co.in
 InvoiceCurrencyCode=INR
-InvoiceNumber=fgfg
+InvoiceNumber=262626
 Item=Power Cable 3C x 2.5 Sqmm
 LeadTime=10
 LiquidatedDamages=50%
@@ -46,9 +46,9 @@ PRApproverGroupD=businessunitmanager@cormsquare.com
 PackageType=Drum
 PartNumber=PN - 1
 Password=Admin@123
-PoReferenceId=2Q0024PO00181
+PoReferenceId=2Q0024REQ02881
 PorNotes=Purchase Order Request Notes
-PrRefId=2Q0024REQ02480
+PrRefId=2Q0024REQ02881
 PresidentDirectorCorporate=hazel@sharklasers.com
 PriceValidity=3 Months
 Project=E256232Q00
@@ -65,13 +65,13 @@ StorageLocation=1001 - \tGeneral Sys Impo
 TEApprover=p.aldo@yokogawa.com
 TargetPrice=4500
 TaxCode=PZ-Zero Rated Purchase
-Title=fgfg
+Title=262626
 TypeOfPurchase=Multiple Vendor
 Vendor=NANDI
 VendorMailId=sales@nandipowertronics.com
 Volume=50
 WarrantyRequirement=2 Years
-Wbs=J11
+Wbs=J11BOPH
 browser=edge
 custom=inspectiontrue
 headless=false

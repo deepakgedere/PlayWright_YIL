@@ -103,6 +103,7 @@ import com.reports.ExtendReportListener;
 import org.testng.ITestListener;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import java.util.Properties;
@@ -212,18 +213,18 @@ public class BaseTest {
 
     @Parameters({"browser"})
     @BeforeTest
-    public void Setup(String browserName) {
+    public void Setup(@Optional("chrome") String browserName) {
         try {
             playWrightFactory = new PlayWrightFactory();
-            if(browserName == null){
-                properties = playWrightFactory.initializeProperties("chrome");
-                properties.setProperty("browser", browserName);
-            }
-            if(browserName != null){
-                properties = playWrightFactory.initializeProperties(browserName);
-                properties.setProperty("browser", browserName);
-            }
+
+            // Use the provided browser name or fall back to "chrome" if it's not provided
+            properties = playWrightFactory.initializeProperties(browserName);
+            properties.setProperty("browser", browserName);
+
+            // Initialize browser with the properties
             page = playWrightFactory.initializeBrowser(properties);
+
+            // Initialize pages
             loginPageInterface = new LoginPage(properties, page);
             logoutPageInterface = new LogoutPage(page);
 

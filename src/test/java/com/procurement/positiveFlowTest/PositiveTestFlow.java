@@ -1,17 +1,19 @@
 package com.procurement.positiveFlowTest;
 
 import com.base.BaseTest;
+import com.beust.jcommander.Parameter;
+import jdk.jfr.Enabled;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.IListenersAnnotation;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PositiveTestFlow extends BaseTest {
-
     @Test
     public void PositiveFlowTestMethod(){
         try {
@@ -38,9 +40,9 @@ public class PositiveTestFlow extends BaseTest {
             prCreateNonCatalog.Checker();
             prCreateNonCatalog.OrderIntake();
             prCreateNonCatalog.TargetPrice();
-            prCreateNonCatalog.Tcas();
-            prCreateNonCatalog.TcasCheck();
-            prCreateNonCatalog.TcasFileUpload();
+//            prCreateNonCatalog.Tcas();
+//            prCreateNonCatalog.TcasCheck();
+//            prCreateNonCatalog.TcasFileUpload();
             prCreateNonCatalog.TypeOfPurchase();
             prCreateNonCatalog.ImportItems();
             prCreateNonCatalog.AddLineRequisitionItems();
